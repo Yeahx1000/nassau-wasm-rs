@@ -1,30 +1,8 @@
-pub enum PointOfSail {
-    CloseHauled,
-    CloseReach,
-    BeamReach,
-    BroadReach,
-    Running,
-}
+mod tests;
+mod types;
+use types::{Metrics, PointOfSail};
 
-impl PointOfSail {
-    pub fn as_str(&self) -> &'static str {
-        match self {
-            PointOfSail::CloseHauled => "Close Hauled",
-            PointOfSail::CloseReach => "Close Reach",
-            PointOfSail::BeamReach => "Beam Reach",
-            PointOfSail::BroadReach => "Broad Reach",
-            PointOfSail::Running => "Running",
-        }
-    }
-}
 
-pub struct Metrics {
-    pub point_of_sail: String,
-    pub optimal_sail_angle: f64,
-    pub trim_score: u8,
-    pub speed_factor: f64,
-    pub notes: String,
-}
 
 fn clamp(v: f64, min: f64, max: f64) -> f64 {
     if v < min {
@@ -142,31 +120,3 @@ fn trim_hint(actual:f64, optimal: f64) -> String {
     }
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_optimal_sail_angle() {
-        let a = optimal_sail_angle(0.0);
-        let b = optimal_sail_angle(90.0);
-        let c = optimal_sail_angle(180.0);
-        assert!(a < b && b < c);
-    }
-
-    #[test]
-    fn trim_score_bounds(){
-        let metric = compute_metrics(12.0, 90.0, 45.0);
-        assert!(metric.trim_score <= 100);
-    }
-
-    #[test]
-    fn point_of_sail_classification(){
-        assert_eq!(classify_point_of_sail(10.0).as_str(), "Close Hauled");
-        assert_eq!(classify_point_of_sail(90.0).as_str(), "Beam Reach");
-        assert_eq!(classify_point_of_sail(175.0).as_str(), "Running");
-
-
-    }
-
-}
