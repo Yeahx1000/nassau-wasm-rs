@@ -1,6 +1,6 @@
 # Nassau-WASM
 
-A tiny sailing performance calculator, written in Rust, running in the browser via WASM. For fun and educational use only.
+Nautical performance calculator + metrics, written in Rust. Running in the browser via WASM. "For the Plot" + Educational use ONLY.
 
 ## Tech Stack
 
