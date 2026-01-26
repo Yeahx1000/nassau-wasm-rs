@@ -941,11 +941,16 @@ dependencies = [
 ]
 
 [[package]]
-name = "nassau_core"
+name = "nassau-wasm-rs"
 version = "0.1.0"
 dependencies = [
+ "wasm-bindgen",
  "wasm-pack",
 ]
+
+[[package]]
+name = "nassau_core"
+version = "0.1.0"
 
 [[package]]
 name = "ntapi"
