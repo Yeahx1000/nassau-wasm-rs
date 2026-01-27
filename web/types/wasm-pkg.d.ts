@@ -1,5 +1,5 @@
 declare module 'wasm-pkg' {
-  export function calculate_metrics(
+  export function compute_metrics(
     tws: number,
     twa: number,
     sail_angle: number

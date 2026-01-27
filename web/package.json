@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "wasm:build": "cd .. && wasm-pack build crates/wasm --target bundler --out-dir web/wasm-pkg"
+    "wasm:build": "wasm-pack build crates/wasm --target bundler --out-dir web/wasm-pkg"
 
   },
   "dependencies": {
