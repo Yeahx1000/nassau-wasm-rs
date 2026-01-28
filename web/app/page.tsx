@@ -2,8 +2,6 @@
 
 import { useState, useEffect } from "react";
 
-// TODO: clean up the Ui, looks awful, and organize components
-
 type Metrics = {
   point_of_sail: string,
   optimal_sail_angle: number,

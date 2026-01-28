@@ -2,7 +2,7 @@ mod tests;
 mod types;
 use types::{Metrics, PointOfSail};
 
-
+// TODO: consider Egui or RatatUI for UI alternatives
 
 fn clamp(v: f64, min: f64, max: f64) -> f64 {
     if v < min {
